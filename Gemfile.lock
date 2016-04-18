@@ -36,6 +36,7 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    angular-ui-bootstrap-rails (0.14.3)
     angularjs-rails (1.5.0)
     arel (6.0.3)
     bcrypt (3.1.10)
@@ -74,6 +75,12 @@ GEM
       activesupport (>= 4.1.0)
     hashie (3.4.3)
     i18n (0.7.0)
+    jasmine (2.4.0)
+      jasmine-core (~> 2.4)
+      phantomjs
+      rack (>= 1.2.1)
+      rake
+    jasmine-core (2.4.1)
     jbuilder (2.4.1)
       activesupport (>= 3.0.0, < 5.1)
       multi_json (~> 1.2)
@@ -99,6 +106,7 @@ GEM
       rack (>= 1.0, < 3)
     orm_adapter (0.5.0)
     pg (0.18.4)
+    phantomjs (2.1.1.0)
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -187,12 +195,14 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  angular-ui-bootstrap-rails
   angularjs-rails
   byebug
   coffee-rails (~> 4.1.0)
   devise
   devise_token_auth
   factory_girl_rails
+  jasmine
   jbuilder (~> 2.0)
   jquery-rails
   omniauth

@@ -17,11 +17,13 @@ gem 'devise_token_auth'
 gem 'omniauth'
 
 gem 'angularjs-rails'
+gem 'angular-ui-bootstrap-rails'
 
 group :development, :test do
   gem 'byebug'
   gem 'rspec-rails'
   gem 'factory_girl_rails'
+  gem 'jasmine'
 end
 
 group :development do
