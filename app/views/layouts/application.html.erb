@@ -7,9 +7,8 @@
   <%= csrf_meta_tags %>
 </head>
 <body ng-app="rails_api">
-<div class="content" ng-view>
-  Nothing here {{'yet' + '!'}}
-  <%= yield %>
-</div>
+  <div class="main-view-container" ui-view>
+  	<%= yield %>
+  </div>
 </body>
 </html>

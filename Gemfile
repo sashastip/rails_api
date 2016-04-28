@@ -5,6 +5,7 @@ gem 'rails', '4.2.6'
 gem 'pg', '~> 0.15'
 
 gem 'sass-rails', '~> 5.0'
+gem 'bootstrap-sass'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
@@ -18,6 +19,11 @@ gem 'omniauth'
 
 gem 'angularjs-rails'
 gem 'angular-ui-bootstrap-rails'
+gem 'angular-ui-router-rails'
+gem 'angular-rails-templates'
+gem 'angularjs-rails-resource'
+
+gem 'sprockets'
 
 group :development, :test do
   gem 'byebug'

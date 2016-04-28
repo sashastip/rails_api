@@ -1,1 +1,0 @@
-var rails_api = angular.module('rails_api', ["ui.bootstrap"])
