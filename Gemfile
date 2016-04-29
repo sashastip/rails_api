@@ -27,6 +27,9 @@ gem 'sprockets'
 
 gem 'rails_admin'
 
+gem 'faker'
+gem 'pry'
+
 group :development, :test do
   gem 'byebug'
   gem 'rspec-rails'

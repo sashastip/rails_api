@@ -4,11 +4,11 @@ Rails.application.routes.draw do
   resources :posts
   devise_for :users
   root to: 'welcome#index'
-  get "*path" => "welcome#index"
 
-  namespace :api do
+  namespace :api, defaults: { format: 'json' } do
     namespace :v1 do
       resources :posts
+      resources :users
     end
   end
 end

@@ -1,7 +1,7 @@
 angular.module('rails_api')
   .controller('HomeController', ['$scope', '$http', function($scope, $http){
-    $http.get('/posts.json')
+    $http.get('/api/v1/users')
       .then(function(res){
-        $scope.posts = res.data;
+        $scope.users = res.data;
       })
   }])
