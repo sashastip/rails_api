@@ -1,11 +1,10 @@
 Rails.application.routes.draw do
 
-  get 'welcome/index'
-
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   resources :posts
   devise_for :users
-  root to: 'application#index'
-  #get "*path" => "application#index"
+  root to: 'welcome#index'
+  get "*path" => "welcome#index"
 
   namespace :api do
     namespace :v1 do

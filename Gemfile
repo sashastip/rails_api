@@ -25,6 +25,8 @@ gem 'angularjs-rails-resource'
 
 gem 'sprockets'
 
+gem 'rails_admin'
+
 group :development, :test do
   gem 'byebug'
   gem 'rspec-rails'
