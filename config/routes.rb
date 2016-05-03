@@ -5,9 +5,8 @@ Rails.application.routes.draw do
   devise_for :users
 
   root to: 'application#index'
-  get '*path' => "application#index"
 
-  namespace :api, defaults: { format: 'json' } do
+  namespace :api do
     namespace :v1 do
       resources :posts
       resources :users

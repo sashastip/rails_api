@@ -30,6 +30,8 @@ gem 'rails_admin'
 gem 'faker'
 gem 'pry'
 
+gem 'jquery-turbolinks'
+
 group :development, :test do
   gem 'byebug'
   gem 'rspec-rails'
