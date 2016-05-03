@@ -2,7 +2,7 @@
 <div class="container">
   <h1>SignUp</h1>
   
-  <form ng-submit="signUp()">
+  <form ng-controller="AuthController" ng-click="signup">
     <div class="form-group">
       <label>First Name
         <input type="first_name" class="form-control" ng-model="user.first_name">

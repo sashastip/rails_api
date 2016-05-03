@@ -15,4 +15,10 @@ angular.module('rails_api')
        $scope.email = user.email;
        $scope.password = user.password;
      }
+
+     $scope.signup = function () {
+       console.log($scope.user);
+       $scope.email = user.email;
+       $scope.password = user.password;
+     }
   }]);
