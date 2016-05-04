@@ -14,8 +14,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'devise'
-gem 'rack-cors'
-gem 'jwt'
+gem 'angular_rails_csrf'
 
 gem 'angularjs-rails'
 gem 'angular-ui-bootstrap-rails'
