@@ -4,12 +4,13 @@ Rails.application.routes.draw do
   resources :posts
   devise_for :users
 
-  root to: 'application#index'
-
   namespace :api do
     namespace :v1 do
       resources :posts
       resources :users
     end
   end
+
+  root to: 'application#index'
+  get '*path' => "application#index"
 end
