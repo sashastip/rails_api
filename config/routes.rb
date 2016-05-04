@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
   
+  get 'welcome/index'
+
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   resources :posts
 
@@ -13,6 +15,6 @@ Rails.application.routes.draw do
   
   devise_for :users
 
-  root to: 'application#index'
-  get '*path' => "application#index"
+  root to: 'welcome#index'
+  get '*path' => "welcome#index"
 end
