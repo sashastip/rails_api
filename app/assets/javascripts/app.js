@@ -6,7 +6,7 @@ angular.module('rails_api', ['rails', 'ui.bootstrap', 'ui.router', 'templates'])
     $stateProvider
       // <-- HOME PAGE --> //
       .state('home', { url: '/', templateUrl: 'home/index.html', controller: 'HomeController' })
-      // <-- -------- --> //
+      // <-- -----------> //
 
       // <-- Devise -->//
       .state('auth_login', { url: '/auth/login', templateUrl: 'auth/login.html', controller: 'AuthController' })
