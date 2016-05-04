@@ -23,8 +23,20 @@ angular.module('rails_api')
      }
 
      $scope.signup = function () {
-       console.log($scope.user);
-       $scope.email = user.email;
-       $scope.password = user.password;
-     }
+       $http({
+        method  : 'POST',
+        url     : '/users/sign_up',
+        data    : $scope.user,
+        headers : { 'Content-Type': 'application/x-www-form-urlencoded' }
+      })
+        .success(function(data) {
+          if (data.errors) {
+            $scope.errorName = data.errors.name;
+            $scope.errorUserName = data.errors.username;
+            $scope.errorEmail = data.errors.email;
+          } else {
+            $scope.message = data.message;
+          }
+        });
+      }
   }]);
