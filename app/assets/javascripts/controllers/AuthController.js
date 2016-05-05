@@ -8,14 +8,14 @@ angular.module('rails_api')
       }
     }
 
-     $scope.login = function () {
-       Auth.login($scope.user, config).then(function(user) {
-         console.log(user);
-       }, function(error) {
-       });
+    $scope.login = function () {
+      Auth.login($scope.user, config).then(function(user) {
+          console.log(user);
+        }, function(error) {
+      });
 
        $scope.$on('devise:login', function(event, currentUser){
-
+         $location.path('/');
        });
 
        $scope.$on('devise:new-session', function(event, currentUser) {
@@ -31,24 +31,26 @@ angular.module('rails_api')
         });
 
         $scope.$on('devise:new-registration', function(event, user) {
-            // ...
+            $location.path('/');
         });
       }
 
-      $scope.lo = function () {
-      $http({
-        method  : 'POST',
-        url     : '/users/sign_up',
-        data    : $scope.user
-      })
-        .success(function(data) {
-          if (data.errors) {
-            $scope.errorName = data.errors.name;
-            $scope.errorUserName = data.errors.username;
-            $scope.errorEmail = data.errors.email;
-          } else {
-            $scope.message = data.message;
-          }
+      $scope.logout = function () {
+        var config = {
+            headers: {
+                'X-HTTP-Method-Override': 'DELETE'
+            }
+        };
+        // Log in user...
+        // ...
+        Auth.logout(config).then(function(oldUser) {
+            // alert(oldUser.name + "you're signed out now.");
+        }, function(error) {
+            // An error occurred logging out.
+        });
+
+        $scope.$on('devise:logout', function(event, oldCurrentUser) {
+          $location.path('/');
         });
       }
   }]);
