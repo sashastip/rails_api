@@ -7,7 +7,7 @@ angular.module('rails_api')
      $scope.login = function () {
       $http({
         method  : 'POST',
-        url     : '/users/sign_in',
+        url     : '/users',
         data    : $scope.user
       })
         .success(function(data) {
@@ -22,9 +22,26 @@ angular.module('rails_api')
      }
 
      $scope.signup = function () {
-       $http({
+      $http({
         method  : 'POST',
-        url     : '/users/sign_up.json',
+        url     : '/users',
+        data    : $scope.user
+      })
+        .success(function(data) {
+          if (data.errors) {
+            $scope.errorName = data.errors.name;
+            $scope.errorUserName = data.errors.username;
+            $scope.errorEmail = data.errors.email;
+          } else {
+            $scope.message = data.message;
+          }
+        });
+      }
+
+      $scope.lo = function () {
+      $http({
+        method  : 'POST',
+        url     : '/users/sign_up',
         data    : $scope.user
       })
         .success(function(data) {

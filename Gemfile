@@ -15,12 +15,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'devise'
 gem 'angular_rails_csrf'
+gem 'rack-cors', :require => 'rack/cors'
 
-gem 'angularjs-rails'
-gem 'angular-ui-bootstrap-rails'
-gem 'angular-ui-router-rails'
-gem 'angular-rails-templates'
-gem 'angularjs-rails-resource'
+gem "bower-rails", "~> 0.10.0"
 
 gem 'sprockets'
 

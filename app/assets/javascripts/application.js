@@ -17,6 +17,7 @@
 //= require angularjs/rails/resource
 //= require angular-ui-bootstrap
 //= require angular-ui-router
+//= require dropzone
 //= require angular-rails-templates
 //= require_tree ./templates
 //= require_tree .
