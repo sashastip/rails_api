@@ -29,6 +29,9 @@ gem 'rails_admin'
 gem 'faker'
 gem 'pry'
 
+gem 'carrierwave'
+gem 'dropzonejs-rails'
+
 group :development, :test do
   gem 'byebug'
   gem 'rspec-rails'

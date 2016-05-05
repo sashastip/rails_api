@@ -8,8 +8,7 @@ angular.module('rails_api')
       $http({
         method  : 'POST',
         url     : '/users/sign_in',
-        data    : $scope.user,
-        headers : { 'Content-Type': 'application/x-www-form-urlencoded' }
+        data    : $scope.user
       })
         .success(function(data) {
           if (data.errors) {
@@ -25,9 +24,8 @@ angular.module('rails_api')
      $scope.signup = function () {
        $http({
         method  : 'POST',
-        url     : '/users/sign_up',
-        data    : $scope.user,
-        headers : { 'Content-Type': 'application/x-www-form-urlencoded' }
+        url     : '/users/sign_up.json',
+        data    : $scope.user
       })
         .success(function(data) {
           if (data.errors) {

@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   
+  resources :images
   get 'welcome/index'
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
