@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.3.0'
 
 gem 'rails', '4.2.6'
 
@@ -13,15 +14,13 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+gem 'rails_admin'
 gem 'devise'
-gem 'angular_rails_csrf'
-gem 'rack-cors', :require => 'rack/cors'
 
 gem "bower-rails", "~> 0.10.0"
-
-gem 'sprockets'
-
-gem 'rails_admin'
+gem 'angular-rails-templates'
+gem 'angular_rails_csrf'
+gem 'rack-cors', :require => 'rack/cors'
 
 gem 'faker'
 gem 'pry'
@@ -41,3 +40,9 @@ group :development do
   gem 'spring'
 end
 
+gem 'rails_12factor', group: :production
+
+
+source "https://rails-assets.org" do
+  gem "rails-assets-angular-devise"
+end

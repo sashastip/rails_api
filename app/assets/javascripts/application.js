@@ -12,12 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require bootstrap-sprockets
-//= require angular
-//= require angularjs/rails/resource
-//= require angular-ui-bootstrap
+//= require angular/angular
+//= require angular-bootstrap/ui-bootstrap
 //= require angular-ui-router
-//= require dropzone
 //= require angular-rails-templates
-//= require_tree ./templates
+//= require angular-devise
+//= require bootstrap-sprockets
+//= require dropzone
 //= require_tree .

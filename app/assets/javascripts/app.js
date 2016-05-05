@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('rails_api', ['rails', 'ui.bootstrap', 'ui.router', 'templates'])
+angular.module('rails_api', ['ui.bootstrap', 'ui.router', 'templates', 'Devise'])
 
   .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function ($stateProvider, $urlRouterProvider, $locationProvider) {
     $stateProvider
