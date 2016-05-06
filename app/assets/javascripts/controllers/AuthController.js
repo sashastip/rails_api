@@ -2,6 +2,14 @@
 
 angular.module('rails_api')
   .controller('AuthController', ['$scope', '$location', '$http', 'Auth', function($scope, $location, $http, Auth){
+    Auth.currentUser().then(function(user) {
+        // User was logged in, or Devise returned
+        // previously authenticated session.
+        console.log(user); // => {id: 1, ect: '...'}
+    }, function(error) {
+        // unauthenticated error
+    });
+
     //auth
     var config = {
       headers: {
@@ -16,11 +24,10 @@ angular.module('rails_api')
       });
 
        $scope.$on('devise:login', function(event, currentUser){
-         $location.path('/');
        });
 
        $scope.$on('devise:new-session', function(event, currentUser) {
-            // user logged in by Auth.login({...})
+          $location.path('/');
         });
      }
 
@@ -32,8 +39,9 @@ angular.module('rails_api')
         });
 
         $scope.$on('devise:new-registration', function(event, user) {
-            $location.path('/');
+          $location.path('/');
         });
+        
       }
 
       $scope.logout = function () {
@@ -56,5 +64,9 @@ angular.module('rails_api')
         });
 
         $location.path('/');
+      }
+
+      $scope.isAuth = function () {
+        return Auth.isAuthenticated();
       }
   }]);
