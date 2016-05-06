@@ -2,7 +2,8 @@
 
 angular.module('rails_api')
   .controller('AuthController', ['$scope', '$location', '$http', 'Auth', function($scope, $location, $http, Auth){
-  	var config = {
+    //auth
+    var config = {
       headers: {
         'X-HTTP-Memthod-Override': 'POST'
       }
@@ -37,20 +38,23 @@ angular.module('rails_api')
 
       $scope.logout = function () {
         var config = {
-            headers: {
-                'X-HTTP-Method-Override': 'DELETE'
-            }
+          headers: {
+              'X-HTTP-Method-Override': 'DELETE'
+          }
         };
         // Log in user...
         // ...
         Auth.logout(config).then(function(oldUser) {
-            // alert(oldUser.name + "you're signed out now.");
+          //console.log("oldUser");
+             //alert(oldUser.name + "you're signed out now.");
         }, function(error) {
-            // An error occurred logging out.
+          console.log(error);
         });
 
         $scope.$on('devise:logout', function(event, oldCurrentUser) {
-          $location.path('/');
+          
         });
+
+        $location.path('/');
       }
   }]);
