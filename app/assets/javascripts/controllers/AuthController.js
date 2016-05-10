@@ -63,7 +63,7 @@ angular.module('rails_api')
           
         });
 
-        $location.path('/');
+        $window.location.reload();
       }
 
       $scope.isAuth = function () {
