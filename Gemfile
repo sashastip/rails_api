@@ -17,11 +17,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'rails_admin'
 gem 'devise'
 
-gem "bower-rails", "~> 0.10.0"
-gem 'angular-rails-templates'
-gem 'angular_rails_csrf'
-gem 'rack-cors', :require => 'rack/cors'
-
 gem 'faker'
 gem 'pry'
 
@@ -44,8 +39,3 @@ group :development do
 end
 
 gem 'rails_12factor', group: :production
-
-
-source "https://rails-assets.org" do
-  gem "rails-assets-angular-devise"
-end
