@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   resources :articles
 
   resources :images
-  get 'welcome/index'
 
   
   resources :posts
@@ -18,8 +17,7 @@ Rails.application.routes.draw do
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   
-  devise_for :users, controllers: { sessions: 'users/sessions' }
+  devise_for :users
 
   root to: 'welcome#index'
-  get '*path' => "welcome#index"
 end
