@@ -2,7 +2,6 @@ Rails.application.routes.draw do
 
   resources :pictures
   resources :articles
-  resources :articles
 
   resources :images
 
@@ -20,5 +19,5 @@ Rails.application.routes.draw do
   
   devise_for :users
 
-  root to: 'welcome#index'
+  root to: 'pictures#index'
 end

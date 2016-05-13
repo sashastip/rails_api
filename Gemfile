@@ -20,7 +20,7 @@ gem 'devise'
 gem 'faker'
 gem 'pry'
 
-gem 'carrierwave'
+gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 gem 'dropzonejs-rails'
 
 gem 'elasticsearch-model'

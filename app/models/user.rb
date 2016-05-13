@@ -5,4 +5,9 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :posts, dependent: :destroy
+
+  after_create :send_mail
+    def send_mail
+      UserMailer.send_new_user_message(self).deliver
+    end
 end
