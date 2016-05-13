@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
 
-  
+  resources :articles
+  resources :articles
+
   resources :images
   get 'welcome/index'
 
-  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  
   resources :posts
 
   namespace :api do
@@ -13,8 +15,10 @@ Rails.application.routes.draw do
       resources :users
     end
   end
+
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   
-  devise_for :users
+  devise_for :users, controllers: { sessions: 'users/sessions' }
 
   root to: 'welcome#index'
   get '*path' => "welcome#index"
