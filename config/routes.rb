@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :orders
   get 'search', to: 'search#search'
 
   resources :pictures
