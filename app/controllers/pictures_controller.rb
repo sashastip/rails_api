@@ -49,12 +49,16 @@ class PicturesController < ApplicationController
     end
   end
 
+  def download
+    send_file(params[:path])
+  end
+
   private
     def set_picture
       @picture = Picture.find(params[:id])
     end
 
     def picture_params
-      params.require(:picture).permit(:name, :description, :images, :images_cache)
+      params.require(:picture).permit(:name, :description, {images: []}, :images_cache)
     end
 end

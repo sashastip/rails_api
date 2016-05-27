@@ -20,7 +20,17 @@
     <%= f.text_area :description %>
   </div>
   <div class="field">
-    <%= f.file_field :images %>
+    <% if @picture.images? %>
+        <% @picture.images.each do |image| %>
+          <table>
+            <tr>
+              <td><%= image_tag(media) %></td>
+              <td><%#= link_to "#{media.file.identifier}", files_download_path(path: media.url.to_s) %></td>
+            </tr>
+          </table>
+        <% end %>
+      <% end %>
+    <%= f.file_field :images, multiple: true %>
     <%= f.hidden_field :images_cache %>
   </div>
   <div class="actions">

@@ -11,8 +11,15 @@
 </p>
 
 <p>
-	<strong>Image</strong>
-	<%= image_tag @picture.images.url %>
+	<strong>Images</strong>
+	<% @picture.images.map do |image| %>
+	  <table>
+	    <tr>
+	      <td><%= image_tag(image) %></td>
+	      <td><%= link_to "#{image.file.basename}", image_download_path(path: image.current_path.to_s) %></td>
+	    </tr>
+	   </table>
+	<% end %>
 </p>
 
 <%= link_to 'Edit', edit_picture_path(@picture) %> |

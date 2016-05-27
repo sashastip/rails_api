@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'image/download' => 'pictures#download'
+
   resources :orders
   get 'search', to: 'search#search'
 
