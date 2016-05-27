@@ -7,9 +7,6 @@ Rails.application.routes.draw do
 
   resources :pictures
   resources :articles
-
-  resources :images
-
   
   resources :posts
 

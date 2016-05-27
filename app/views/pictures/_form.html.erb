@@ -24,8 +24,7 @@
         <% @picture.images.each do |image| %>
           <table>
             <tr>
-              <td><%= image_tag(media) %></td>
-              <td><%#= link_to "#{media.file.identifier}", files_download_path(path: media.url.to_s) %></td>
+              <td><%= image_tag(image) %></td>
             </tr>
           </table>
         <% end %>
