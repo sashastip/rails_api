@@ -1,7 +1,8 @@
 class UserMailer < ApplicationMailer
   default from: "alex.stipanenko@gmail.com"
 
-  def welcome_email(user)
-    @user = current_user
+  def new_user_registration(user)
+    @user = user
+    mail(to: @user.email, subject: "Welcome to My Awecome #{@user.email}")
   end
 end

@@ -7,7 +7,8 @@ class User < ActiveRecord::Base
   has_many :posts, dependent: :destroy
 
   after_create :send_mail
-    def send_mail
-      UserMailer.send_new_user_message(self).deliver
-    end
+
+  def send_mail
+    UserMailer.new_user_registration(self).deliver_now
+  end
 end

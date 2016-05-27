@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 20160517061939) do
     t.text     "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.json     "image"
+    t.json     "images"
   end
 
   create_table "posts", force: :cascade do |t|

@@ -1,5 +1,7 @@
 class Picture < ActiveRecord::Base
-  mount_uploader :image, ImageUploader
+  validates :name, :description, presence: true
+
+  mount_uploader :images, ImageUploader
 
   def paypal_url(return_path)
     values = {
