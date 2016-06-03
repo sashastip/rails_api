@@ -20,12 +20,12 @@ gem 'faker'
 gem 'pry'
 
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
-gem 'dropzonejs-rails'
 
 group :development, :test do
   gem 'byebug'
   gem 'rspec-rails'
   gem 'factory_girl_rails'
+  gem 'capybara'
   gem 'jasmine'
 end
 
