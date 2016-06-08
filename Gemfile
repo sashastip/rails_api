@@ -21,6 +21,9 @@ gem 'pry'
 
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 
+gem 'letter_opener'
+gem 'launchy'
+
 group :development, :test do
   gem 'byebug'
   gem 'rspec-rails'
