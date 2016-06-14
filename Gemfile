@@ -21,10 +21,10 @@ gem 'pry'
 
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 
-gem 'letter_opener'
 gem 'launchy'
 
 group :development, :test do
+  gem 'letter_opener'
   gem 'byebug'
   gem 'rspec-rails'
   gem 'factory_girl_rails'
