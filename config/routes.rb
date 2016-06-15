@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :sons
+  resources :fathers
   get 'uploads/new'
 
   get 'image/download' => 'pictures#download'
