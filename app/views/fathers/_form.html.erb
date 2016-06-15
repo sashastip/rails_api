@@ -1,20 +1,17 @@
 <%= form_for(@father) do |f| %>
-  <% if @father.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@father.errors.count, "error") %> prohibited this father from being saved:</h2>
-
-      <ul>
-      <% @father.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
 
   <div class="field">
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
+
+  <%= f.fields_for :sons do |s| %>
+    <div class="field">
+      <%= s.label :name, "Son Name" %><br>
+      <%= s.text_field :name %>
+    </div>
+  <% end %>
+
   <div class="actions">
     <%= f.submit %>
   </div>

@@ -1,28 +1,21 @@
 class FathersController < ApplicationController
   before_action :set_father, only: [:show, :edit, :update, :destroy]
 
-  # GET /fathers
-  # GET /fathers.json
   def index
     @fathers = Father.all
   end
 
-  # GET /fathers/1
-  # GET /fathers/1.json
   def show
   end
 
-  # GET /fathers/new
   def new
     @father = Father.new
+    @father.sons.build
   end
 
-  # GET /fathers/1/edit
   def edit
   end
 
-  # POST /fathers
-  # POST /fathers.json
   def create
     @father = Father.new(father_params)
 
@@ -37,8 +30,6 @@ class FathersController < ApplicationController
     end
   end
 
-  # PATCH/PUT /fathers/1
-  # PATCH/PUT /fathers/1.json
   def update
     respond_to do |format|
       if @father.update(father_params)
@@ -51,8 +42,6 @@ class FathersController < ApplicationController
     end
   end
 
-  # DELETE /fathers/1
-  # DELETE /fathers/1.json
   def destroy
     @father.destroy
     respond_to do |format|
@@ -62,13 +51,11 @@ class FathersController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_father
       @father = Father.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def father_params
-      params.require(:father).permit(:name)
+      params.require(:father).permit(:name, sons_attributes: [:name])
     end
 end

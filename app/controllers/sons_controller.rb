@@ -1,28 +1,20 @@
 class SonsController < ApplicationController
   before_action :set_son, only: [:show, :edit, :update, :destroy]
 
-  # GET /sons
-  # GET /sons.json
   def index
     @sons = Son.all
   end
 
-  # GET /sons/1
-  # GET /sons/1.json
   def show
   end
 
-  # GET /sons/new
   def new
     @son = Son.new
   end
 
-  # GET /sons/1/edit
   def edit
   end
 
-  # POST /sons
-  # POST /sons.json
   def create
     @son = Son.new(son_params)
 
@@ -37,8 +29,6 @@ class SonsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /sons/1
-  # PATCH/PUT /sons/1.json
   def update
     respond_to do |format|
       if @son.update(son_params)
@@ -51,8 +41,6 @@ class SonsController < ApplicationController
     end
   end
 
-  # DELETE /sons/1
-  # DELETE /sons/1.json
   def destroy
     @son.destroy
     respond_to do |format|
@@ -62,12 +50,10 @@ class SonsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_son
       @son = Son.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def son_params
       params.require(:son).permit(:name)
     end

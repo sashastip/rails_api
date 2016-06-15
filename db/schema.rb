@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160614124850) do
+ActiveRecord::Schema.define(version: 20160615074122) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,12 @@ ActiveRecord::Schema.define(version: 20160614124850) do
   end
 
   add_index "articles", ["user_id"], name: "index_articles_on_user_id", using: :btree
+
+  create_table "fathers", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "orders", force: :cascade do |t|
     t.string   "name"
@@ -52,6 +58,15 @@ ActiveRecord::Schema.define(version: 20160614124850) do
   end
 
   add_index "posts", ["user_id"], name: "index_posts_on_user_id", using: :btree
+
+  create_table "sons", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "father_id"
+  end
+
+  add_index "sons", ["father_id"], name: "index_sons_on_father_id", using: :btree
 
   create_table "uploads", force: :cascade do |t|
     t.datetime "created_at",         null: false
@@ -82,4 +97,5 @@ ActiveRecord::Schema.define(version: 20160614124850) do
 
   add_foreign_key "articles", "users"
   add_foreign_key "posts", "users"
+  add_foreign_key "sons", "fathers"
 end
