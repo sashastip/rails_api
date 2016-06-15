@@ -1,7 +1,12 @@
 class Picture < ActiveRecord::Base
-  validates :name, :description, presence: true
+  has_attached_file :image
 
-  mount_uploaders :images, ImageUploader
+  validates_attachment :image, 
+                        presence: true,
+                        content_type: { content_type: /\Aimage\/.*\Z/ },
+                        size: { less_than: 5.megabyte }
+
+  validates :name, :description, presence: true
 
   def paypal_url(return_path)
     values = {

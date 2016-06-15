@@ -12,6 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require angular/angular
 //= require bootstrap-sprockets
+//= require dropzone
 //= require_tree .

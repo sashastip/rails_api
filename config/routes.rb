@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'uploads/new'
+
   get 'image/download' => 'pictures#download'
 
   resources :orders
@@ -16,6 +18,8 @@ Rails.application.routes.draw do
       resources :users
     end
   end
+
+  resources :uploads
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   

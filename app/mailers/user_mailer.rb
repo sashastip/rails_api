@@ -5,4 +5,13 @@ class UserMailer < ApplicationMailer
     @user = user
     mail(to: @user.email, subject: "Welcome to My Awecome #{@user.email}")
   end
+
+  def welcome_email
+    @users = User.all
+
+    @users.each do |user| 
+      @user = user
+      mail(to: @user.email, subject: 'Welcome to My Awecome #{user.email}')
+    end
+  end
 end
