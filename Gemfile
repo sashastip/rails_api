@@ -51,3 +51,7 @@ group :development do
 end
 
 gem 'rails_12factor', group: :production
+
+source "https://rails-assets.org" do
+  gem "rails-assets-angular-devise"
+end
