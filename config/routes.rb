@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :users
   resources :sons
   resources :fathers
   get 'uploads/new'
