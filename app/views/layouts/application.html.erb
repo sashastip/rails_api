@@ -6,7 +6,7 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body ng-app="rails_api">
   <%= render "layouts/header" %>
   <div id="content">
     <%= yield %>	
