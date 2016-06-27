@@ -30,6 +30,7 @@ gem 'dropzonejs-rails'
 gem 'whenever', :require => false
 
 gem "bower-rails", "~> 0.10.0"
+gem 'angular-rails-templates'
 
 group :development, :test do
   #gem 'letter_opener'

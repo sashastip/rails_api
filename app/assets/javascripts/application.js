@@ -14,4 +14,7 @@
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require dropzone
+//= require angular/angular
+//= require angular-rails-templates
+//= require_tree ./templates
 //= require_tree .
