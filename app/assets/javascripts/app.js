@@ -1,1 +1,1 @@
-var rails_api = angular.module('rails_api', ['templates', 'Devise']);
+var rails_api = angular.module('rails_api', ['templates', 'Devise', 'ui.router']);

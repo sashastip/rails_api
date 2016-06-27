@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :load_user, only: [:show]
+  
   def index 
     @users = User.all 
   end
@@ -9,7 +10,6 @@ class UsersController < ApplicationController
   end
 
   private
-
     def load_user 
       @user = User.find(params[:id])
     end
