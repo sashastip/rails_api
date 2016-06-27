@@ -32,6 +32,8 @@ gem 'whenever', :require => false
 gem "bower-rails", "~> 0.10.0"
 gem 'angular-rails-templates'
 
+gem 'rack-cors', :require => 'rack/cors'
+
 group :development, :test do
   #gem 'letter_opener'
   gem 'byebug'
